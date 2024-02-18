@@ -20,6 +20,10 @@ app.get('/', (req, res) => {
     res.send('Welcome to the API');
     });
 
+//Routes
+const userRoutes = require('./routes/user.routes');
+app.use('/user', userRoutes);
+
 app.use((error, req, res, next) => {
     res.status(error.status || statusCodes.INTERNAL_SERVER_ERROR);
     res.json({
