@@ -23,6 +23,8 @@ app.get('/', (req, res) => {
 //Routes
 const userRoutes = require('./routes/user.routes');
 app.use('/user', userRoutes);
+const clientRoutes = require('./routes/client.routes');
+app.use('/client', clientRoutes);
 
 app.use((error, req, res, next) => {
     res.status(error.status || statusCodes.INTERNAL_SERVER_ERROR);
