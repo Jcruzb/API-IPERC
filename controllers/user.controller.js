@@ -8,11 +8,11 @@ module.exports.createUser = (req, res) => {
     console.log(user);
     user.save()
         .then((createdUser) => {
-            res.status(HttpStatus.CREATED).json(createdUser); // Envía el usuario creado como respuesta
+            res.status(HttpStatus.StatusCodes.CREATED).json(createdUser); // Envía el usuario creado como respuesta
         })
         .catch((error) => {
             console.error(error);
-            res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error); // Maneja el error de manera adecuada
+            res.status(HttpStatus.StatusCodes.INTERNAL_SERVER_ERROR).json(error); // Maneja el error de manera adecuada
         });
 }
 
@@ -20,10 +20,10 @@ module.exports.createUser = (req, res) => {
 module.exports.getAllUsers = (req, res) => {
     User.find()
         .then((users) => {
-            res.status(HttpStatus.OK).json(users);
+            res.status(HttpStatus.StatusCodes.OK).json(users);
         })
         .catch((error) => {
-            res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ error: error.message });
+            res.status(HttpStatus.StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error.message });
         });
 }
 
@@ -32,12 +32,12 @@ module.exports.getUserById = (req, res) => {
     User.findById(id)
         .then((user) => {
             if (!user) {
-                throw createError(HttpStatus.NOT_FOUND, 'User not found');
+                throw createError(HttpStatus.StatusCodes.NOT_FOUND, 'User not found');
             }
-            res.status(HttpStatus.OK).json(user);
+            res.status(HttpStatus.StatusCodes.OK).json(user);
         })
         .catch((error) => {
-            res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ error: error.message });
+            res.status(HttpStatus.StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error.message });
         });
 }
 
@@ -48,11 +48,11 @@ module.exports.updateUser = (req, res) => {
     User.findByIdAndUpdate(id, { name, email, password }, { new: true })
         .then((user) => {
             if (!user) {
-                throw createError(HttpStatus.NOT_FOUND, 'User not found');
+                throw createError(HttpStatus.StatusCodes.NOT_FOUND, 'User not found');
             }
-            res.status(HttpStatus.OK).json(user);
+            res.status(HttpStatus.StatusCodes.OK).json(user);
         })
         .catch((error) => {
-            res.status(HttpStatus.INTERNAL_SERVER_ERROR).json({ error: error.message });
+            res.status(HttpStatus.StatusCodes.INTERNAL_SERVER_ERROR).json({ error: error.message });
         });
 }
