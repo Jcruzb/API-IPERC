@@ -3,8 +3,8 @@ const createError = require('http-errors');
 const HttpStatus = require('http-status-codes');
 
 module.exports.createProcess = (req, res) => {
-    const { name, description } = req.body;
-    const process = new Process({ name, description });
+    const { name, description, Client } = req.body;
+    const process = new Process({ name, description, Client });
     process.save()
         .then((createdProcess) => {
             res.status(HttpStatus.StatusCodes.CREATED).json(createdProcess);
@@ -41,8 +41,8 @@ module.exports.getProcessById = (req, res) => {
 
 module.exports.updateProcess = (req, res) => {
     const { id } = req.params;
-    const { name, description } = req.body
-    Process.findByIdAndUpdate(id, { name, description }, { new: true })
+    const { name, description, Client } = req.body
+    Process.findByIdAndUpdate(id, { name, description, Client }, { new: true })
         .then((process) => {
             if (!process) {
                 throw createError(HttpStatus.StatusCodes.NOT_FOUND, 'Process not found');

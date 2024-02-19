@@ -24,7 +24,6 @@ const clientSchema = new Schema({
         required: true
     },
     contact:{
-        //vinculado al ID del usuario
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }

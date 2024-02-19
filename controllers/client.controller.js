@@ -26,7 +26,6 @@ module.exports.getAllClients = (req, res) => {
 }
 
 module.exports.getClientById = (req, res) => {
-    console.log("entre a get client by id");
     const { id } = req.params;
     Client.findById(id)
         .then((client) => {
@@ -42,7 +41,7 @@ module.exports.getClientById = (req, res) => {
 }
 
 module.exports.updateClient = (req, res) => {
-    const { id } = req.params;
+    console.log("entre a update client");
     const { rs, ruc, address, phone, email, contact } = req.body
     Client.findByIdAndUpdate(id, { rs, ruc, address, phone, email, contact }, { new: true })
         .then((client) => {
