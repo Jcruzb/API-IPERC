@@ -27,6 +27,8 @@ const clientRoutes = require('./routes/client.routes');
 app.use('/client', clientRoutes);
 const processRoutes = require('./routes/process.routes');
 app.use('/process', processRoutes);
+const dangerRoutes = require('./routes/danger.routes');
+app.use('/danger', dangerRoutes);
 
 app.use((error, req, res, next) => {
     res.status(error.status || statusCodes.INTERNAL_SERVER_ERROR);

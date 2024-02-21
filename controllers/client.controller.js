@@ -1,4 +1,4 @@
-const Client = require('../models/Clients.model');
+const Client = require('../models/Client.model');
 const createError = require('http-errors');
 const HttpStatus = require('http-status-codes');
 

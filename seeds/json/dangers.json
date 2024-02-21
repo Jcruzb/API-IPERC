@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Electricidad",
+    "risks": [
+      {
+        "riskName": "Descarga eléctrica",
+        "riskDescription": "Riesgo de recibir una descarga eléctrica debido a instalaciones defectuosas o manejo inapropiado de equipos eléctricos.",
+        "probability": 4,
+        "impact": 5,
+        "level": "Alto",
+        "control": "Uso de EPP, mantenimiento preventivo de instalaciones y equipos."
+      },
+      {
+        "riskName": "Incendio por cortocircuito",
+        "riskDescription": "Riesgo de incendio debido a un cortocircuito en instalaciones eléctricas mal mantenidas o sobrecargadas.",
+        "probability": 3,
+        "impact": 5,
+        "level": "Alto",
+        "control": "Inspecciones regulares y correcto dimensionamiento de la instalación eléctrica."
+      }
+    ],
+    "description": "Riesgos asociados al uso y mantenimiento de instalaciones y equipos eléctricos.",
+    "law": "Normativa de seguridad eléctrica nacional"
+  },
+  {
+    "name": "Trabajo en Alturas",
+    "risks": [
+      {
+        "riskName": "Caídas de altura",
+        "riskDescription": "Riesgo de caer desde una altura superior a dos metros, pudiendo resultar en lesiones graves o mortales.",
+        "probability": 4,
+        "impact": 5,
+        "level": "Muy alto",
+        "control": "Uso obligatorio de arnés de seguridad y líneas de vida, capacitación en trabajo seguro en alturas."
+      },
+      {
+        "riskName": "Golpes por objetos que caen",
+        "riskDescription": "Riesgo de recibir impactos por objetos que caen desde alturas, con potencial de causar lesiones.",
+        "probability": 3,
+        "impact": 4,
+        "level": "Alto",
+        "control": "Uso de casco de seguridad, delimitación de zonas de riesgo bajo áreas de trabajo en altura."
+      }
+    ],
+    "description": "Riesgos relacionados con el trabajo en alturas, incluyendo trabajos en andamios, techos, y cualquier actividad realizada a más de dos metros de altura.",
+    "law": "Reglamento para trabajos en altura del país/región"
+  }
+]
