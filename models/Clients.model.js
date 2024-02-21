@@ -26,7 +26,13 @@ const clientSchema = new Schema({
     contact:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    }
+    },
+    process:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Process'
+        }
+    ]
 }, {
     timestamps: true,
     toJSON: {

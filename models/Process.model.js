@@ -9,10 +9,6 @@ const processSchema = new Schema({
     description: {
         type: String,
         required: true
-    },
-    Client: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Client'
     }
 }, {
     timestamps: true,
