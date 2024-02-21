@@ -32,6 +32,12 @@ const clientSchema = new Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Process'
         }
+    ],
+    iperc:[
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'IPERC'
+        }
     ]
 }, {
     timestamps: true,

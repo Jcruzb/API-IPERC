@@ -16,7 +16,24 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    role: {
+        type: String,
+        enum: ['admin', 'client', 'user'],
+        default: 'user'
+    },
+    client: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Client'
+    },
+    process: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Process'
+    }],
+    iperc: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'IPERC'
+    }]
 }, {
     timestamps: true,
     toJSON: {

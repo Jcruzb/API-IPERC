@@ -5,7 +5,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const createError = require('http-errors');
-const { statusCodes } = require('http-status-codes');
+const HttpStatus = require('http-status-codes');
 const jwt = require('jsonwebtoken');
 
 require('./config/db.config');
@@ -29,9 +29,12 @@ const processRoutes = require('./routes/process.routes');
 app.use('/process', processRoutes);
 const dangerRoutes = require('./routes/danger.routes');
 app.use('/danger', dangerRoutes);
+const ipercRoutes = require('./routes/iperc.routes');
+app.use('/iperc', ipercRoutes);
+
 
 app.use((error, req, res, next) => {
-    res.status(error.status || statusCodes.INTERNAL_SERVER_ERROR);
+    res.status(error.status || HttpStatus.StatusCodes.INTERNAL_SERVER_ERROR);
     res.json({
         error: {
             message: error.message

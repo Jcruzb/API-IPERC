@@ -9,6 +9,14 @@ const processSchema = new Schema({
     description: {
         type: String,
         required: true
+    },
+    client: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Client'
+    },
+    iperc: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'IPERC'
     }
 }, {
     timestamps: true,
